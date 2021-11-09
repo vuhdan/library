@@ -13,11 +13,30 @@ if(!localStorage.getItem('books')){
   loadLibrary();
 }
 
-function Book(author, title, pages, read) {
-  this.author = author;
-  this.title = title;
-  this.pages = pages;
-  this.read = read;
+class Book{
+  constructor(author, title, pages, read){
+    this.author = author;
+    this.title = title;
+    this.pages = pages;
+    this.read = read;
+  }
+  
+  get author(){
+    return this.author;
+  }
+
+  get title(){
+    return this.title;
+  }
+
+  get pages(){
+    return this.pages;
+  }
+
+  get read(){
+    return this.read;
+  }
+
 }
 
 function addBookToLibrary(book) {
@@ -30,13 +49,6 @@ addBtn.addEventListener('click', () => {
 });
 
 closeModal.addEventListener('click', closeForm);
-
-/* book1 = new Book('JRR', 'LOTR', 1001, true);
-book2 = new Book('Sanderson', 'Mistborn', 350, true);
-book3 = new Book('Erikson', 'Malazan book of the fallen', 600, false)
-myLibrary.push(book1);
-myLibrary.push(book2);
-myLibrary.push(book3); */
 
 function displayBooks(){
   container.innerHTML = "";
